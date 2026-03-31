@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block title %}All URL Checks{% endblock %}
+
+{% block content %}
+<div class="all-checks-container">
+  <h2 class="all-checks-title"> All URL Checks</h2>
+  <table class="all-checks-table">
+    <thead>
+      <tr>
+        <th>User ID</th>
+        <th>URL</th>
+        <th>Verdict</th>
+        <th>Features</th>
+        <th>Date</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for check in checks %}
+      <tr>
+        <td>{{ check.user_id }}</td>
+        <td>{{ check.url }}</td>
+        <td class="verdict {{ check.verdict|lower }}">{{ check.verdict }}</td>
+        <td>{{ check.features }}</td>
+        <td>{{ check.created_at }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+{% endblock %}

@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block title %}Register{% endblock %}
+{% block body_class %}page-auth page-register{% endblock %}
+{% block content %}
+<div class="register-wrapper">
+  <div class="register-card">
+    <h2 class="register-title">Create Account</h2>
+    <p class="register-subtitle">Join us and get started right away.</p>
+    <form method="POST" class="register-form">
+      <div class="register-field">
+        <label>Username</label>
+        <input type="text" name="username" placeholder="Enter your username" required>
+      </div>
+      <div class="register-field">
+        <label>Email</label>
+        <input type="email" name="email" placeholder="Enter your email" required>
+      </div>
+      <div class="register-field">
+        <label>Password</label>
+        <input type="password" name="password" placeholder="Enter your password" required>
+      </div>
+      <button type="submit" class="btn-register">Register</button>
+    </form>
+    <p class="register-extra">Already have an account? <a href="{{ url_for('login') }}">Login here</a></p>
+  </div>
+</div>
+{% endblock %}

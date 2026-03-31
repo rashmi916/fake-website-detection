@@ -1,0 +1,71 @@
+/* Container */
+.history-container {
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+/* Table */
+.history-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 15px;
+  font-size: 0.95rem;
+}
+
+.history-table th, 
+.history-table td {
+  padding: 12px 16px;
+  text-align: left;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.history-table thead {
+  background: #007bff;
+  color: #fff;
+}
+
+.history-table tbody tr:hover {
+  background: #3d7df3;
+  transition: 0.3s;
+}
+
+/* Verdict badges */
+.badge {
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-weight: bold;
+  font-size: 0.85rem;
+}
+
+.badge.safe {
+  color: #05c131;
+}
+
+.badge.phishing {
+  color: #ef0c23;
+}
+
+
+/* Export button box */
+.export-box {
+  margin-top: 20px;
+  text-align: right;
+}
+
+.export-btn {
+  display: inline-block;
+  background: linear-gradient(135deg, #007bff, #0056b3);
+  color: #fff;
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-weight: bold;
+  text-decoration: none;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.15);
+  transition: all 0.3s ease;
+}
+
+.export-btn:hover {
+  background: linear-gradient(135deg, #0056b3, #004099);
+  box-shadow: 0 5px 12px rgba(0,0,0,0.2);
+}

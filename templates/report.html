@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% block title %}Reports{% endblock %}
+
+{% block content %}
+<div class="report-container">
+
+  <!-- Header -->
+  <h2> Phishing Detection Report</h2>
+  <p class="subtitle">Visual analysis of safe vs phishing websites detected</p>
+
+
+  <!-- Chart Tabs -->
+  <div class="chart-tabs">
+    <button onclick="showChart('bar')">Bar Chart</button>
+    <button onclick="showChart('pie')">Pie Chart</button>
+    <button onclick="showChart('line')">Line Chart</button>
+  </div>
+
+  <!-- Chart Box -->
+  <div class="chart-box">
+    <canvas id="reportChart" width="500" height="300"></canvas>
+  </div>
+</div>
+
+<!-- Data from Flask -->
+<script>
+  window.reportData = {
+    labels: {{ labels | tojson }},
+    counts: {{ counts | tojson }}
+  };
+</script>
+
+<!-- Chart.js -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="{{ url_for('static', filename='report.js') }}"></script>
+{% endblock %}

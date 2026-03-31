@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block title %}Result{% endblock %}
+
+{% block content %}
+<div class="result-container">
+  <h2> Website Check Result</h2>
+
+  <p><strong>URL:</strong> {{ url }}</p>
+  <p><strong>Verdict:</strong> {{ verdict }}</p>
+
+  <a href="{{ url_for('check') }}" class="result-btn result-btn-primary">Check Another</a>
+
+  {% if verdict == "Safe" %}
+    <a href="{{ url }}" target="_blank" class="result-btn result-btn-success">Go to Website</a>
+  {% else %}
+    <p class="warning">⚠️ This site is flagged as Phishing. Do not visit!</p>
+  {% endif %}
+</div>
+{% endblock %}

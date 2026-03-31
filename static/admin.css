@@ -1,0 +1,103 @@
+body {
+  background-size: cover;
+  background-color:lightblue;
+}
+
+.admin-container {
+  max-width: 1000px;
+  margin: 40px auto;
+  padding: 20px;
+  text-align: center;
+  color: white;
+  border-radius: 16px;
+  
+}
+
+.admin-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.admin-header h2 {
+  font-size: 30px;
+  color: white;
+}
+
+.admin-header p {
+  font-size: 30px;
+  color: white;
+}
+
+.admin-actions h4 {
+  margin-bottom: 20px;
+  font-size: 20px;
+  color: white;
+}
+
+.action-cards {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.action-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 250px;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  padding: 20px;
+  text-decoration: none;
+  color: red;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.action-card img {
+  width: 60px;
+  height: 60px;
+  margin-bottom: 15px;
+}
+
+.action-card h3 {
+  margin-bottom: 8px;
+  color:white;
+}
+
+.action-card p {
+  font-size: 14px;
+  color:white;
+  text-align: center;
+}
+
+.action-card:hover {
+  transform: translateY(-8px);
+  border-color: #3498db;
+  box-shadow: 0 10px 18px rgba(0,0,0,0.2);
+  background: #f9fcff;
+}
+/* Button */
+.btn {
+  display: inline-block;
+  background: #3498db;
+  color: white;
+  padding: 10px 15px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: background 0.3s ease;
+}
+
+.btn:hover {
+  background: #2980b9;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .cards {
+    flex-direction: column;
+  }
+}

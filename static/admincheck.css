@@ -1,0 +1,54 @@
+.all-checks-container {
+  max-width: 1000px;
+  margin: 40px auto;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.all-checks-title {
+  text-align: center;
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.all-checks-table {
+  width: 100%;
+  border-collapse: collapse;
+ 
+}
+
+.all-checks-table th,
+.all-checks-table td {
+  padding: 12px;
+  text-align: center;
+  border: 1px solid #ccc;
+}
+
+.all-checks-table th {
+  background: #007acc;
+  color: #fff;
+  text-transform: uppercase;
+}
+
+.all-checks-table tr:hover {
+  background: #3254ea;
+  transition: 0.3s;
+}
+
+/* verdict colors */
+.verdict.safe {
+  color: green;
+  font-weight: bold;
+}
+
+.verdict.phishing {
+  color: red;
+  font-weight: bold;
+}
+
+.verdict.unknown {
+  color: rgb(244, 241, 241);
+  font-weight: bold;
+}

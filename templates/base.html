@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>{% block title %}Phishing Detector{% endblock %}</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='dashboard.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='login.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='report.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='check.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='history.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='admin.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='admincheck.css')}}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='users.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='result.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='forgot.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='registe.css') }}">
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <nav class="navbar">
+  <div class="logo">
+    <a href="{{ url_for('dashboard') }}" class="logo-text">Phishing Detector</a>
+  </div>
+
+  <div class="nav-links">
+    {% if session.get("user_id") %}
+      <a href="{{ url_for('dashboard') }}">Dashboard</a>
+      <a href="{{ url_for('check') }}">Check URL</a>
+      <a href="{{ url_for('history') }}">History</a>
+      <a href="{{ url_for('report') }}">Reports</a>
+      {% if session.get("is_admin") %}
+        <a href="{{ url_for('admin_panel') }}">Admin</a>
+      {% endif %}
+      <a href="{{ url_for('logout') }}">Logout</a>
+    {% else %}
+      <a href="{{ url_for('login') }}">Login</a>
+      <a href="{{ url_for('register') }}">Register</a>
+    {% endif %}
+  </div>
+</nav>
+
+  <!--  Flash messages -->
+  {% with messages = get_flashed_messages() %}
+    {% if messages %}
+      <div id="flash-message" class="flash-popup">
+        {% for message in messages %}
+          <p>{{ message }}</p>
+        {% endfor %}
+      </div>
+      <script>
+        setTimeout(function() {
+          const flash = document.getElementById("flash-message");
+          if (flash) {
+            flash.style.opacity = "0";
+            setTimeout(() => flash.remove(), 500); // removes after fade out
+          }
+        }, 3000); // 3 seconds
+      </script>
+    {% endif %}
+  {% endwith %}
+
+  <!--  Placeholder for page-specific content -->
+  <main class="content">
+    {% block content %}{% endblock %}
+  </main>
+
+ <!-- Footer Section -->
+<footer class="footer">
+  <div class="social-icons">
+    <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+    <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+    <a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+    <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+  </div>
+  <p>&copy; 2025 Your Website. All Rights Reserved.</p>
+</footer>
+
+<!-- Back to Top Button -->
+<button onclick="scrollToTop()" id="backToTopBtn">⬆ Back to Top</button>
+
+<!-- Font Awesome (for icons) -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<script>
+  // Show button only when scrolled down
+  window.onscroll = function() {
+    let btn = document.getElementById("backToTopBtn");
+    if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+      btn.style.display = "block";
+    } else {
+      btn.style.display = "none";
+    }
+  };
+
+  // Smooth scroll to top
+  function scrollToTop() {
+    window.scrollTo({top: 0, behavior: 'smooth'});
+  }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,81 @@
+/* Page wrapper */
+.register-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+  padding: 20px;
+}
+
+/* Card container */
+.register-card {
+  background: #ffffff;
+  padding: 20px 30px;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+  
+}
+
+/* Title & subtitle */
+.register-title {
+  font-size: 28px;
+  margin-bottom: 10px;
+  color: #333;
+}
+.register-subtitle {
+  font-size: 14px;
+  margin-bottom: 25px;
+  color: #666;
+}
+
+/* Form fields */
+.register-form .register-field {
+  margin-bottom: 20px;
+  text-align: left;
+}
+.register-form label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: 600;
+  color: #555;
+}
+.register-form input {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 14px;
+}
+
+/* Submit button */
+.btn-register {
+  width: 100%;
+  padding: 12px;
+  background-color: #4a90e2;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+.btn-register:hover {
+  background-color: #357ab8;
+}
+
+/* Extra link */
+.register-extra {
+  margin-top: 15px;
+  font-size: 14px;
+  color: #777;
+}
+.register-extra a {
+  color: #4a90e2;
+  text-decoration: none;
+}
+.register-extra a:hover {
+  text-decoration: underline;
+}

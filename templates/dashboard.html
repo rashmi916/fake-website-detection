@@ -1,0 +1,77 @@
+{% extends "base.html" %}
+{% block title %}Dashboard{% endblock %}
+
+{% block content %}
+<div class="dashboard-container">
+  <div class="hero">
+    <div class="hero-content">
+      <h1>Protect Yourself from <span>Phishing Attacks</span></h1>
+      <p>
+        Phishing websites try to trick you into giving away your personal
+        information. Stay safe by checking suspicious links here!
+      </p>
+      <div class="hero-buttons">
+        <a href="{{ url_for('check') }}" class="btn-primary">Check a Website</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Why Trust Us Section -->
+<section class="why-trust">
+  <h2>Why Trust Our Phishing Detector?</h2>
+  <div class="cards">
+    <div class="card">
+      <div class="icon"><i class="fas fa-shield-alt"></i></div>
+      <h3>Cybersecurity Expertise</h3>
+      <p>Built with latest machine learning models trained on real phishing data.</p>
+    </div>
+    <div class="card">
+      <div class="icon"><i class="fas fa-bolt"></i></div>
+      <h3>Real-Time Detection</h3>
+      <p>Quick results with high accuracy. Stay safe while browsing online.</p>
+    </div>
+    <div class="card">
+      <div class="icon"><i class="fas fa-chart-line"></i></div>
+      <h3>Constantly Updated</h3>
+      <p>We update our system regularly to detect the newest phishing methods.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Font Awesome CDN -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+<div class="info-feedback-container">
+  <!-- Left Side: Phishing Info -->
+  <div class="info-box">
+    <h2>Phishing?</h2>
+    <p>Phishing is a cyber attack where attackers pretend to be a trusted source 
+       to steal sensitive data like passwords, credit card details, or personal info. 
+       Common signs of phishing:
+      Suspicious links or email attachments.<br>
+      Messages creating urgency ("Your account will be locked!").<br>
+      Unknown sender addresses.
+
+      Consequences of Phishing:
+      Financial Loss: Attackers can use stolen information to access bank accounts and make fraudulent transactions. 
+      Identity Theft: Personal information can be used to steal someone's identity. 
+      Malware Infection: Victims may inadvertently download malware, which can compromise their devices or systems. 
+
+</p>
+  </div>
+
+  <!-- Right Side: Feedback Form -->
+  <div class="feedback-box">
+    <h2>Give Us Your Feedback</h2>
+    <form method="POST" action="{{ url_for('feedback') }}">
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="email" placeholder="Your Email" required>
+      <textarea name="feedback" rows="4" placeholder="Your Feedback" required></textarea>
+      <button type="submit">Submit Feedback</button>
+    </form>
+  </div>
+</div>
+
+
+ 
+{% endblock %}

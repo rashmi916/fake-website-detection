@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block title %}Check Website{% endblock %}
+{% block body_class %}check-page{% endblock %}
+{% block content %}
+<div class="check-container">
+  <div class="check-box">
+    <h2>Phishing Website Detection</h2>
+    <p class="subtitle">Enter a website URL and complete the CAPTCHA to verify</p>
+
+    <form method="POST" class="check-form">
+      <div class="form-group">
+        <label for="url">Website URL</label>
+        <input type="text" id="url" name="url" placeholder="Website name" required>
+      </div>
+
+      <div class="form-group captcha-box">
+        <img src="{{ url_for('captcha') }}" alt="CAPTCHA">
+        <input type="text" name="captcha_input" placeholder="Enter CAPTCHA" required>
+      </div>
+
+      <button type="submit" class="btn-check">Check Website</button>
+    </form>
+  </div>
+</div>
+{% endblock %}

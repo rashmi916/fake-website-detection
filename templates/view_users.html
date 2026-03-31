@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% block title %}Manage Users{% endblock %}
+
+{% block content %}
+<div class="user-management-container">
+  <h2 class="user-management-title">👥 User Management</h2>
+  <table class="user-management-table">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Username</th>
+        <th>Email</th>
+        <th>Admin?</th>
+        <th>Created At</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for user in users %}
+      <tr>
+        <td>{{ user.id }}</td>
+        <td>{{ user.username }}</td>
+        <td>{{ user.email }}</td>
+        <td class="admin-status">
+          {% if user.is_admin %}
+            <span class="admin-yes">✅ Yes</span>
+          {% else %}
+            <span class="admin-no">❌ No</span>
+          {% endif %}
+        </td>
+        <td>{{ user.created_at }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+{% endblock %}

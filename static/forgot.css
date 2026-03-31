@@ -1,0 +1,101 @@
+/* Forgot Password Page Styling (same as login) */
+body.auth-page {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #f4f6f9; /* same background as login */
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+/* Center container */
+.container {
+  background: #fff;
+  padding: 40px;
+  border-radius: 12px;
+  width: 360px;
+  text-align: center;
+  
+}
+
+.container h2 {
+  margin-bottom: 15px;
+  color: #222;
+  font-size: 24px;
+  font-weight: 600;
+}
+
+/* Form styles */
+form div {
+  text-align: left;
+  margin-bottom: 20px;
+}
+
+form label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: #333;
+}
+
+form input[type="email"],
+form input[type="password"] {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #cccccc;
+  border-radius: 8px;
+  font-size: 14px;
+  transition: 0.3s;
+}
+
+form input:focus {
+  border-color: #007BFF;
+  outline: none;
+  box-shadow: 0px 0px 6px rgba(0,123,255,0.4);
+}
+
+/* Button container */
+.button-group {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px; /* spacing between buttons */
+  margin-top: 15px;
+}
+
+/* Primary button (Update) */
+button {
+  flex: 1;  /* equal width inside flex container */
+  padding: 12px;
+  background: linear-gradient(135deg, #007BFF, #0056b3);
+  color: #fff;
+  font-size: 16px;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  background: linear-gradient(135deg, #0056b3, #00408a);
+}
+
+/* Back to Login button */
+.btn-auth {
+  flex: 1;  /* equal width inside flex container */
+  padding: 12px;
+   background: linear-gradient(135deg, #007BFF, #0056b3);
+  color: #fff; /* gray variant */
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 8px;
+  text-decoration: none;
+  text-align: center;
+  transition: 0.3s;
+}
+
+.btn-auth:hover {
+  background: #2391e4;
+}

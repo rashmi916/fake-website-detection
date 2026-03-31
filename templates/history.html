@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+{% block title %}History{% endblock %}
+{% block content %}
+
+<div class="history-container">
+  <h2>📜 History of Checks</h2>
+
+  <table class="history-table">
+    <thead>
+      <tr>
+        <th>URL</th>
+        <th>Verdict</th>
+        <th>Score</th>
+        <th>Date</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for row in checks %}
+      <tr>
+        <td>{{ row.url }}</td>
+        <td>
+          {% if row.verdict == 'Safe' %}
+            <span class="badge safe">Safe</span>
+          {% elif row.verdict == 'Phishing' %}
+            <span class="badge phishing">Phishing</span>
+          {% else %}
+            <span class="badge neutral"> Unknown</span>
+          {% endif %}
+        </td>
+        <td>{{ row.score }}</td>
+        <td>{{ row.created_at }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+
+ <div class="export-box">
+  <a href="{{ url_for('export') }}" class="export-btn">
+    <span>📥 Export CSV</span>
+    
+  </a>
+</div>
+
+
+{% endblock %}
